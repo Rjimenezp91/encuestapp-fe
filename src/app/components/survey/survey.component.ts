@@ -48,8 +48,10 @@ export class SurveyComponent implements OnInit {
     console.log(this.surveyControl);
     console.log(this.surveyControl.value);
     
-    this.surveyService.saveSurvey(this.surveyControl.value).then(response =>{
-      console.log('response', response);
+    this.surveyService.saveSurvey(this.surveyControl.value).then(() =>{
+      this._snackBar.open('Tu voto se ha ingrasado con éxito',
+      'Aceptar', { duration: 3000,  panelClass: ['white-text'] })
+     this._router.navigate(['/home']);
       
     }).catch(err =>{
 
@@ -66,11 +68,6 @@ export class SurveyComponent implements OnInit {
       }
       return console.log(err);
       
-    }).finally(()=> {
-      
-      this._snackBar.open('Tu voto se ha ingrasado con éxito',
-       'Aceptar', { duration: 3000,  panelClass: ['white-text'] })
-      this._router.navigate(['/home']);
-      })
+    })
   }
 }
