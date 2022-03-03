@@ -1,0 +1,23 @@
+<form [formGroup]="surveyControl">
+    <div class="cardContent" >
+
+        
+            <h1 class="title">ENCUESTA</h1>
+            <h5 class="subtitle">ESTILO MUSICAL</h5>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Estilo musical</mat-label>
+                    <mat-select formControlName="choice" >
+                    <mat-option class="options" *ngFor="let style of stylesOfMusic" [value]="style.value">
+                        <p class="txtOption">{{ style.value }}</p>
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="legacy" class="inputContainer">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email"  placeholder="Ej. usuario@dominio.cl" />
+                    <mat-error class="error" *ngIf="surveyControl.controls['email'].hasError('required')">el email es obligatorio</mat-error>
+                    <mat-error class="error" *ngIf="surveyControl.controls['email'].hasError('pattern')">el email no es válido</mat-error>
+                </mat-form-field>
+            <button mat-raised-button class="btnEnviar" [disabled]="surveyControl.invalid" (click)="saveData()">ENVIAR</button>
+    </div>
+</form>

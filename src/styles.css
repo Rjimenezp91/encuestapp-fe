@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root
+{
+    /* 
+    --primary-color: #8946A6;
+    --secondary-color: #B762C1;
+    --tertiary-color: #EA99D5; */
+    --main-bg-color: #fff;
+    --carbon: #2e2e2e;
+    --disabled-background: #cccccc;
+    --disabled-color: #666666;
+
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--carbon);
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.white-text{
+    color: white;
+}

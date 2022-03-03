@@ -1,0 +1,21 @@
+.cardContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardContent .title{
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #fff;
+    font-size: 30px;
+}
+.cardContent .mat-raised-button{
+    width: 200px;
+    margin: 10px 0;
+}
+
+.alignCenter{
+    display: flex;
+    align-items: center;
+}

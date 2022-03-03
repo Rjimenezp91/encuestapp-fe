@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'encuestapp-fe';
+  showFiller = false;
+  isOpen:boolean= false;
+
+  toogle() {
+    this.isOpen = !this.isOpen
+  }
 }
